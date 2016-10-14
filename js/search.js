@@ -18,7 +18,7 @@ function Search(){
     }
   }).fail(function(error){
     console.log(error.responseJSON.message);
-    $("#output").append("<li>  No User History Found! Try Again? </li>");
+    $("#repo-data").append("<li>  No User Found! Try Again? </li>");
   });
 
   $.get('https://api.github.com/users/' + user + '?access_token=' + apiKey).then(function(response){
