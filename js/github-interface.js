@@ -1,14 +1,10 @@
 var apiKey = require('./../.env').apiKey;
+var Search = require('./../js/search.js').searchModule;
 
 $(document).ready(function(){
-
+    var testSearch = new Search();
      $("form").submit(function(event){
           event.preventDefault();
-        $.get('https://api.github.com/users/daneden?access_token=' + apiKey).then(function(response){
-          console.log(response);
-        }).fail(function(error){
-          console.log(error.responseJSON.message);
-
-        });
-      });
+          testSearch.getRepos();
+       });
     });
