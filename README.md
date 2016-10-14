@@ -4,7 +4,7 @@
 
 ## Description
 
-_A Github searching program created with gulp, npm, bower, and Javascript_
+_A Github searching program created with gulp, npm, bower, Javascript, and Github Api_
 
 ## Setup/Installation Requirements
 
