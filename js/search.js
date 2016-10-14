@@ -6,7 +6,6 @@ function Search(){
 
  Search.prototype.getRepos = function(user){
   $.get('https://api.github.com/users/' + user + '/repos?access_token=' + apiKey).then(function(response){
-    console.log(response);
     if(response.length == 0){
       $("#repo-data").append("<li> This user has no Repos! </li>");
     }
@@ -23,7 +22,6 @@ function Search(){
   });
 
   $.get('https://api.github.com/users/' + user + '?access_token=' + apiKey).then(function(response){
-    console.log(response);
     $("#user-data").append("<li> User Found: " + response.login + "</li>");
     $("#user-data").append("<li> <img src=" + response.avatar_url + "</img> </li>");
     $("#user-data").append("<li> Followers: " + response.followers + "</li>");

@@ -1,3 +1,12 @@
+body{
+    background: url("http://www.publicdomainpictures.net/pictures/20000/velka/white-and-gray-background.jpg");
+    text-shadow: 0.5px 0.5px black;
+}
+
+label{
+  font-size: 20px;
+}
+
 #user-data{
    list-style-type: none;
    display: inline;
@@ -6,7 +15,7 @@
 
 #repo-data{
   list-style-type: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #dates{
