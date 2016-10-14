@@ -11,7 +11,7 @@ function Search(){
     {
       $("#output").append("<li> Name: " + response[i].full_name + "</li>");
       $("#output").append("<li> Description: " + response[i].description + "</li>");
-      $("#output").append("<li> Date Created: " + moment(response[i].created_at).format() + "</li>");
+      $("#output").append("<li> Date Created: " + moment(response[i].created_at).format("YYYY-MM-DD") + "</li>");
     }
   }).fail(function(error){
     console.log(error.responseJSON.message);
