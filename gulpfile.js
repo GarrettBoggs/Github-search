@@ -43,3 +43,15 @@ gulp.task('bowerCSS', function () {
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));
 });
+
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
+
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
+gulp.task('concatInterface', function() {
+  return gulp.src(['./js/*-interface.js'])
+    .pipe(concat('allConcat.js'))
+    .pipe(gulp.dest('./tmp'));
+});
