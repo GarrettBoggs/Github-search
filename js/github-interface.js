@@ -5,7 +5,7 @@ $(document).ready(function(){
     var testSearch = new Search();
      $("form").submit(function(event){
           event.preventDefault();
-          $("#output").empty();
+          $("#repo-data").empty();
           $("#user-data").empty();
           var user = $("#user").val();
           testSearch.getRepos(user);
