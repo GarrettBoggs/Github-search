@@ -6,6 +6,7 @@ $(document).ready(function(){
      $("form").submit(function(event){
           event.preventDefault();
           $("#output").empty();
+          $("#user-data").empty();
           var user = $("#user").val();
           testSearch.getRepos(user);
        });
