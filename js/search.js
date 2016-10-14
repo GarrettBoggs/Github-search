@@ -8,11 +8,11 @@ function Search(){
   $.get('https://api.github.com/users/' + user + '/repos?access_token=' + apiKey).then(function(response){
     console.log(response);
     if(response.length == 0){
-      $("#output").append("<li>  No User History Found! Try Again? </li>");
+      $("#output").append("<li> This user has no Repos! </li>");
     }
     else{
       for(var i = 0; i < response.length ; i++){
-        $("#output").append("<li> Name: " + response[i].full_name + "</li>");
+        $("#output").append("<li> Name: <a target='_blank' href=" + response[i].html_url + " >" + response[i].full_name + "</li>");
         $("#output").append("<li> Description: " + response[i].description + "</li>");
         $("#output").append("<li id='dates'> Date Created: " + moment(response[i].created_at).format("YYYY-MM-DD") + "</li>");
       }
@@ -27,6 +27,7 @@ function Search(){
     $("#user-data").append("<li> User Found: " + response.login + "</li>");
     $("#user-data").append("<li> <img src=" + response.avatar_url + "</img> </li>");
     $("#user-data").append("<li> Followers: " + response.followers + "</li>");
+    $("#user-data").append("<li> Following: " + response.following + "</li>");
   });
 };
 
