@@ -11,8 +11,7 @@ function Search(){
       $("#output").append("<li>  No User History Found! Try Again? </li>");
     }
     else{
-      for(var i = 0; i < response.length ; i++)
-      {
+      for(var i = 0; i < response.length ; i++){
         $("#output").append("<li> Name: " + response[i].full_name + "</li>");
         $("#output").append("<li> Description: " + response[i].description + "</li>");
         $("#output").append("<li> Date Created: " + moment(response[i].created_at).format("YYYY-MM-DD") + "</li>");
@@ -21,6 +20,13 @@ function Search(){
   }).fail(function(error){
     console.log(error.responseJSON.message);
     $("#output").append("<li>  No User History Found! Try Again? </li>");
+  });
+
+  $.get('https://api.github.com/users/' + user + '?access_token=' + apiKey).then(function(response){
+    console.log(response);
+    $("#user-data").append("<li> User Found: " + response.login + "</li>");
+    $("#user-data").append("<li> <img src=" + response.avatar_url + "</img> </li>");
+    $("#user-data").append("<li>" + response.followers + "</li>");
   });
 };
 
