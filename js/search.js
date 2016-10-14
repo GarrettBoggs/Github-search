@@ -9,8 +9,9 @@ function Search(){
     console.log(response);
     for(var i = 0; i < response.length ; i++)
     {
-      $("#output").append("<li>" + response[i].full_name + "</li>");
-      $("#output").append("<li>" + response[i].description + "</li>");
+      $("#output").append("<li> Name: " + response[i].full_name + "</li>");
+      $("#output").append("<li> Description: " + response[i].description + "</li>");
+      $("#output").append("<li> Date Created: " + moment(response[i].created_at).format() + "</li>");
     }
   }).fail(function(error){
     console.log(error.responseJSON.message);
