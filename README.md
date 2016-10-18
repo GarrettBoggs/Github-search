@@ -10,11 +10,10 @@ _A Github searching program created with gulp, npm, bower, Javascript, and Githu
 
 * _Copy the repository from GitHub_
 * _Open in code editor of your choice_
+* _Download GitHub API Token from https://github.com/settings/tokens
+* _Create .env file and write the following line: export apiKey= "Token"
 * _run npm install and bower install
 * _gulp build and gulp serve_
-
-* _Download GitHub API Token from https://github.com/settings/tokens _
-* _Create .env file and write the following line: export apiKey= "Token"
 
 ## GitHub link
 
